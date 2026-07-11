@@ -58,8 +58,8 @@
     }
   });
 
-  // ----- typing animation (letter) -----
-  const fullLetter = `I don’t have the right words, but I know that you deserve the world. \nEvery moment with you feels like a quiet poem. \nThank you for existing, Shruti. 🌸`;
+  // ----- typing animation (IMPROVED APOLOGY LETTER) -----
+  const fullLetter = `I've been sitting with my thoughts for days now, \nand I realized something important... \n\nI was wrong. \nAnd I'm not just saying that — I truly mean it. \n\nThe way I acted, the things I said... \nnone of it was fair to you. \nYou didn't deserve any of that. \n\nYou deserve someone who listens. \nSomeone who chooses you even when it's hard. \nAnd I want to be that person. \n\nI'm so sorry, Shruti. \nFor everything. \n\nI hope you can give me one more chance \nto show you the love you've always deserved. \n\nWith all my heart, \nYours, always. 🌸`;
 
   let typingInterval = null;
   let currentIndex = 0;
@@ -82,7 +82,7 @@
         typingCursor.style.display = 'none';
         continueLetterBtn.style.display = 'inline-block';
       }
-    }, 38);
+    }, 32); // slightly faster for better flow
   }
 
   // ----- letter -> final -----
@@ -94,16 +94,16 @@
   // ----- floating hearts (final) -----
   function generateHearts() {
     heartContainer.innerHTML = '';
-    const emojis = ['❤️', '✨', '🌸', '💖', '🌺', '💕', '✨', '❤️‍🔥'];
-    for (let i = 0; i < 20; i++) {
+    const emojis = ['❤️', '✨', '🌸', '💖', '🌺', '💕', '✨', '❤️‍🔥', '🌹', '💗'];
+    for (let i = 0; i < 25; i++) {
       const span = document.createElement('span');
       span.className = 'heart-particle';
       span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
       span.style.left = Math.random() * 90 + '%';
       span.style.top = Math.random() * 80 + 10 + '%';
-      span.style.animationDelay = (Math.random() * 6) + 's';
-      span.style.animationDuration = (6 + Math.random() * 6) + 's';
-      span.style.fontSize = (1.2 + Math.random() * 1.8) + 'rem';
+      span.style.animationDelay = (Math.random() * 8) + 's';
+      span.style.animationDuration = (7 + Math.random() * 7) + 's';
+      span.style.fontSize = (1.2 + Math.random() * 2.0) + 'rem';
       heartContainer.appendChild(span);
     }
   }
