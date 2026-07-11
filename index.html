@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>For Shruti 🌸</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- INTRO SCREEN -->
+  <div id="intro" class="screen active">
+    <h1>Hi Shruti 🌸</h1>
+    <div class="sub">This isn't another apology...</div>
+    <div class="sub" style="font-weight:300; margin-top: 6px;">Some conversations deserve more than a text.</div>
+    <button class="btn-primary" id="continueIntro">Continue ❤️</button>
+  </div>
+
+  <!-- ENVELOPE SCREEN -->
+  <div id="envelopeScreen" class="screen">
+    <div class="envelope-wrapper" id="envelopeWrapper">
+      <div class="envelope" id="envelope">
+        <div class="flap" id="flap"></div>
+        <div class="letter-inside" id="letterInside">
+          <span>💌 · for you</span>
+        </div>
+      </div>
+    </div>
+    <div class="envelope-hint" id="envelopeHint">Tap the envelope to open your letter</div>
+  </div>
+
+  <!-- LETTER SCREEN -->
+  <div id="letterScreen" class="screen">
+    <h2>Dear Shruti, 🌸</h2>
+    <div class="letter-body" id="letterBody">
+      <span class="text-content" id="letterText"></span><span class="typing-cursor" id="typingCursor"></span>
+    </div>
+    <button class="btn-secondary" id="continueLetter" style="display:none;">Continue →</button>
+  </div>
+
+  <!-- FINAL SCREEN -->
+  <div id="finalScreen" class="screen">
+    <div class="heart-particle-container" id="heartContainer"></div>
+    <div style="position:relative; z-index:2;">
+      <h2>✨ Forever ✨</h2>
+      <div class="final-message">
+        Every word was written with you in mind.<br>
+        You are the poetry I never knew I needed.<br>
+        <span style="display:inline-block; margin-top:20px; font-size:2rem;">❤️</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
