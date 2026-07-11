@@ -68,7 +68,7 @@ Please forgive me.
 
 I promise I'll never do something like this again.
 
-Miss you.`;
+';
 
   let typingInterval = null;
   let currentIndex = 0;
