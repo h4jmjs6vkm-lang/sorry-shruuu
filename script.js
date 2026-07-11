@@ -24,10 +24,8 @@
   // ----- intro -> envelope -----
   continueIntroBtn.addEventListener('click', function() {
     showScreen('envelopeScreen');
-    // reset envelope state (closed)
     envelope.classList.remove('open');
     envelopeHint.textContent = 'Tap the envelope to open your letter';
-    // hide possible letter screen elements
     continueLetterBtn.style.display = 'none';
     letterTextEl.textContent = '';
   });
@@ -41,15 +39,12 @@
     envelope.classList.add('open');
     envelopeHint.textContent = '✨ You opened it ✨';
 
-    // after animation, go to letter screen
     setTimeout(() => {
       showScreen('letterScreen');
-      // start typing letter
       startTyping();
-      // reset envelope state for next time
       envelopeOpened = false;
       envelope.classList.remove('open');
-    }, 850); // matches flap transition
+    }, 850);
   }
 
   envelopeWrapper.addEventListener('click', function(e) {
@@ -58,14 +53,27 @@
     }
   });
 
-  // ----- typing animation (IMPROVED APOLOGY LETTER) -----
-  const fullLetter = `I've been sitting with my thoughts for days now, \nand I realized something important... \n\nI was wrong. \nAnd I'm not just saying that — I truly mean it. \n\nThe way I acted, the things I said... \nnone of it was fair to you. \nYou didn't deserve any of that. \n\nYou deserve someone who listens. \nSomeone who chooses you even when it's hard. \nAnd I want to be that person. \n\nI'm so sorry, Shruti. \nFor everything. \n\nI hope you can give me one more chance \nto show you the love you've always deserved. \n\nWith all my heart, \nYours, always. 🌸`;
+  // ----- typing animation (REAL APOLOGY - Simple & Honest) -----
+  const fullLetter = `Hey Shruti,
+
+I'm sorry.
+
+I know I hurt you and I feel terrible about it. I wasn't thinking and I said things I didn't mean.
+
+You mean a lot to me and I hate that I made you feel bad. You don't deserve that.
+
+I'm not going to make excuses. I was wrong and I should've handled things better.
+
+Please forgive me.
+
+I promise I'll never do something like this again.
+
+Miss you.`;
 
   let typingInterval = null;
   let currentIndex = 0;
 
   function startTyping() {
-    // clear any previous
     if (typingInterval) clearInterval(typingInterval);
     currentIndex = 0;
     letterTextEl.textContent = '';
@@ -82,7 +90,7 @@
         typingCursor.style.display = 'none';
         continueLetterBtn.style.display = 'inline-block';
       }
-    }, 32); // slightly faster for better flow
+    }, 35);
   }
 
   // ----- letter -> final -----
@@ -94,7 +102,7 @@
   // ----- floating hearts (final) -----
   function generateHearts() {
     heartContainer.innerHTML = '';
-    const emojis = ['❤️', '✨', '🌸', '💖', '🌺', '💕', '✨', '❤️‍🔥', '🌹', '💗'];
+    const emojis = ['❤️', '✨', '🌸', '💖', '💕', '❤️‍🔥', '🌹', '💗'];
     for (let i = 0; i < 25; i++) {
       const span = document.createElement('span');
       span.className = 'heart-particle';
@@ -108,6 +116,5 @@
     }
   }
 
-  // ----- ensure intro active at start -----
   showScreen('intro');
 })();
